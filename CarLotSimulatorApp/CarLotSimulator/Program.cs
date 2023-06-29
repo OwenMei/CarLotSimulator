@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace CarLotSimulator
 {
@@ -18,6 +19,34 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
+            CarLot carLot = new CarLot();
+
+            Car car1 = new Car();
+            car1.year = 2022;
+            car1.make = "Lamborghini";
+            car1.model = "Aventador";
+            car1.engineNoise = "brrrrbrrrr";
+            car1.honkNoise = "bloop";
+            car1.isDriveable = true;
+            carLot.listOfCars.Add(car1);
+
+
+            Car car2 = new Car() { year = 2016, make = "Honda", model = "CRV", engineNoise = "kchkhchkhc", honkNoise = "beep", isDriveable = true };
+            carLot.listOfCars.Add(car2);
+            
+
+            Car car3 = new Car(1908, "Ford", "T", "boomba", "sploot", false);
+            carLot.listOfCars.Add(car3);
+
+            car1.MakeEngineNoise(car1.engineNoise);
+            car1.MakeHonkNoise(car1.honkNoise);
+            car2.MakeEngineNoise(car2.engineNoise);
+            car2.MakeHonkNoise(car2.honkNoise);
+            car3.MakeEngineNoise(car3.engineNoise);
+            car3.MakeHonkNoise(car3.honkNoise);
+
+            Console.WriteLine("\nCars in car lot: \n-----------------------------");
+
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
@@ -28,6 +57,9 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            carLot.allCarDetails();
+
         }
     }
 }
