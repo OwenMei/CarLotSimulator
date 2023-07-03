@@ -17,7 +17,7 @@ namespace CarLotSimulator
 
         public Car()
         {
-
+            CarLot.numOfCars += 1;
         }
 
         public Car(int year, string make, string model, string engineNoise, string honkNoise, bool isDriveable)
@@ -28,6 +28,7 @@ namespace CarLotSimulator
             this.engineNoise = engineNoise;
             this.honkNoise = honkNoise;
             this.isDriveable = isDriveable;
+            CarLot.numOfCars += 1;
         }
 
         public void MakeHonkNoise(string honk)

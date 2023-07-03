@@ -29,15 +29,20 @@ namespace CarLotSimulator
             car1.honkNoise = "bloop";
             car1.isDriveable = true;
             carLot.listOfCars.Add(car1);
+            Console.WriteLine($"\nThere is {CarLot.numOfCars} in the car lot");
 
 
             Car car2 = new Car() { year = 2016, make = "Honda", model = "CRV", engineNoise = "kchkhchkhc", honkNoise = "beep", isDriveable = true };
             carLot.listOfCars.Add(car2);
-            
+            Console.WriteLine($"\nThere are {CarLot.numOfCars} in the car lot");
+
 
             Car car3 = new Car(1908, "Ford", "T", "boomba", "sploot", false);
             carLot.listOfCars.Add(car3);
+            Console.WriteLine($"\nThere are {CarLot.numOfCars} in the car lot");
+            Console.WriteLine("\n-----------------------------");
 
+            Console.WriteLine("Car Noises~");
             car1.MakeEngineNoise(car1.engineNoise);
             car1.MakeHonkNoise(car1.honkNoise);
             car2.MakeEngineNoise(car2.engineNoise);
